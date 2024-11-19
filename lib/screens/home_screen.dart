@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:ticketcarduidesign/components/custom_btn.dart';
+import 'package:ticketcarduidesign/screens/ticket_screen.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
@@ -19,7 +20,11 @@ class HomeScreen extends StatelessWidget {
             bottom: 20,
           ),
           child: CustomBtn(
-            onTap: () {},
+            onTap: () {
+              Navigator.push(context, MaterialPageRoute(builder: (context) {
+                return const TicketScreen();
+              }));
+            },
             btnWidget: Text(
               "Buy Tickets",
               style: GoogleFonts.manrope(
@@ -128,18 +133,16 @@ class HomeScreen extends StatelessWidget {
                     height: 20,
                   ),
                   Text(
-                    "Event Details",
+                    textAlign: TextAlign.start,
+                    "A concert is a live musical performance where artists showcase their talents before an audience, creating an electrifying and immersive experience. Whether held in intimate venues or massive stadiums, concerts bring people together to enjoy the magic of music, often accompanied by vibrant lights, visual effects, and energetic crowd participation. They serve as a platform for musicians to connect with their fans, express emotions, and share stories through melodies and lyrics. The atmosphere of a concert is often charged with excitement, as attendees sing along, dance, and create unforgettable memories, making it a celebration of art and human connection.",
                     style: GoogleFonts.manrope(
-                      fontWeight: FontWeight.w700,
-                      color: Colors.white,
+                      color: const Color(0xFFB3B2B3),
                       fontSize: 14,
+                      fontWeight: FontWeight.w500,
                     ),
                   ),
                   const SizedBox(
-                    height: 20,
-                  ),
-                  Text(
-                    "",
+                    height: 80,
                   ),
                 ],
               ),
